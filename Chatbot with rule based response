@@ -1,0 +1,32 @@
+def chatbot_response(user_input):
+    # Convert user input to lower case for case-insensitive matching
+    user_input = user_input.lower()
+    
+    # Define responses based on keywords
+    if "hello" in user_input or "hi" in user_input:
+        return "Hello! How can I help you today?"
+    elif "how are you" in user_input:
+        return "I'm a chatbot, so I'm always good! How about you?"
+    elif "your name" in user_input:
+        return "I'm a simple chatbot created to assist you. What's your name?"
+    elif "weather" in user_input:
+        return "I can't check the weather right now, but you can use a weather app or website for the latest updates."
+    elif "bye" in user_input or "goodbye" in user_input:
+        return "Goodbye! Have a great day!"
+    else:
+        return "I'm sorry, I don't understand that. Can you ask something else?"
+
+# Main chat loop
+def chat():
+    print("Chatbot: Hello! Type 'exit' to end the chat.")
+    while True:
+        user_input = input("You: ")
+        if user_input.lower() == "exit":
+            print("Chatbot: Goodbye!")
+            break
+        response = chatbot_response(user_input)
+        print(f"Chatbot: {response}")
+
+# Start the chat
+if __name__ == "__main__":
+    chat()
